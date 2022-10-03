@@ -1,21 +1,36 @@
 .header {
-   display: fixed;
+   position: fixed;
    width: 100%;
    top: 0;
    left: 0;
    background: #fff;
-   z-index: 10;
+   z-index: 2;
+   &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 70px;
+      z-index: 3;
+   }
    &__container {
    }
 
    &__content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 30px 0;
       min-height: 90px;
+      position: relative;
+
    }
 
    &__logo {
+      position: relative;
+      z-index: 3;
    }
 
    &__nav {
@@ -23,19 +38,31 @@
    }
 }
 .nav {
-
    &__inner {
       display: flex;
       justify-content: space-between;
    }
 
    &__search {
+      position: relative;
+      z-index: 3;
+      transform: scale(1);
+      transition: all 0.3s;
    }
 
    &__geo {
+      position: relative;
+      z-index: 3;
+      transform: scale(1);
+      transition: all 0.3s;
+
    }
 
    &__burger {
+      position: relative;
+      z-index: 3;
+
+
    }
 
 }
@@ -76,4 +103,9 @@
          top: 20px;
       }
    }
+}
+
+.hide-icons .nav__search,
+.hide-icons .nav__geo {
+   transform: scale(0);
 }

@@ -1,12 +1,76 @@
 .navigation {
-   display: absolute;
-   &__container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   z-index: 2;
+   transition: all 0.9s;
+   &__list {
+      padding-top: 224px;
+      position: relative;
+      z-index: 2;
+      padding-bottom: 150px;
+   }
+   &__item {
+      margin-bottom: 90px;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+   &__link {
+      font-family: $second-font;
+      font-weight: 700;
+      line-height: 100%;
+      color: #000000;
+      &:hover {
+         color: #771373;
+      }
    }
 
-   &__item {
+   &__animation {
+      position: absolute;
+
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
    }
 }
+
+.animation-first {
+   height: 232px;
+   margin-top: 70px;
+   background: url('@svg/menu/first-vector.svg');
+
+}
+.animation-second {
+   height: 47px;
+   margin-top: 386px;
+   background: url('@svg/menu/second-vector.svg');
+
+}
+.animation-third {
+   height: 126px;
+   margin-top: 395px;
+   background: url('@svg/menu/third-vector.svg');
+
+}
+.animation-forth {
+   height: 158px;
+   margin-top: 591px;
+   background: url('@svg/menu/forth-vector.svg');
+
+}
+.animation-fifth {
+   height: 70px;
+   margin-top: 659px;
+   background: url('@svg/menu/fifth-vector.svg');
+
+}
+
+
 .hide {
-   display: none;
+   top: -300%;
 }
 
