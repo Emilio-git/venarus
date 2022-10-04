@@ -1,5 +1,5 @@
 .main {
-
+   position: relative;
 }
 .main-screen {
    padding: 32px 0 101px;
@@ -19,8 +19,6 @@
    }
 
    &__content {
-      position: relative;
-      z-index: 2;
       display: flex;
 
    }
@@ -29,6 +27,9 @@
       align-items: center;
       &:first-child {
          flex: 0 1 360px;
+      }
+      &:last-child {
+         flex: 0 1 780px;
       }
    }
 
@@ -93,9 +94,13 @@
 .product {
 
    &__slider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
    }
 
    &__slider-wrapper {
+      width: 780px;
    }
 
    &__slider-inner {
@@ -107,24 +112,55 @@
    &__slider-btns {
       color: $main-link-color;
       display: flex;
-      justify-content: center;      
+      justify-content: center;   
+      margin-bottom: 31px;   
    }
 
    &__slider-prev {
+      cursor: pointer;
       margin-right: 30px;
+      font-size: 68px;
+      transition: all 0.3s;
+
+      &:hover {
+         opacity: 0.7;
+      }
    }
 
    &__slider-next {
+      font-size: 68px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+         opacity: 0.7;
+      }
+   }
+
+   &__where {
+
+   }
+
+   &__where-link {
+      border: 1px solid #FFFFFF;
+      border-radius: 33.5px;
+      font-size: 18px;
+      line-height: 67px;
+      display: inline-block;
+      height: 67px;
+      text-align: center;
+      color: #FFFFFF;
+      background: $main-link-color;
+      padding: 0 80px;
+      transition: all 0.3s;
+      &:hover {
+         opacity: 0.7;
+      }
    }
 }
 
-
 // .offer__slider{
-//    width:650px;
-//    margin-top:50px;
-//    display:flex;
-//    flex-direction:column;
-//    align-items:flex-end
+
 // }
 
 // .offer__slider-counter{

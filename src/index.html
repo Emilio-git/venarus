@@ -11,82 +11,19 @@
 </head>
 <body>
    <div class="wrapper">
+      <!-- Header Menu -->
       @@include('./html/header.html')
       <main class="main">
-         <section class="main-screen">
-            <div class="main-screen__bg">
-               <img src="@svg/main-section/bg/bg.svg" alt="bg">
-            </div>
-            <div class="main-screen__container container">
-               <div class="main-screen__content">
-                  <div class="main-screen__column">
-                     <div class="main-screen__about">
-                        <h1 class="main-screen__title">Надежный помощник в лечении варикоза</h1>
-                        <div class="main-screen__link-box">
-                           <ul class="main-screen__links">
-                              <li class="main-screen__links-item">
-                                 <a href="#" class="main-screen__link link">
-                                    <span class="icon-play-btn"></span>
-                                    <span>Схема приема</span>
-                                 </a>
-                              </li>
-                              <li class="main-screen__links-item">
-                                 <a href="#" class="main-screen__link link">
-                                    <span class="icon-download-btn"></span>
-                                    <span>Инструкция</span>
-                                 </a>
-                              </li>
-                              <li class="main-screen__links-item">
-                                 <a href="#" class="main-screen__link link">
-                                    <span class="icon-a-btn"></span>
-                                    <span>Где купить</span>
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="main-screen__column">
-                     <div class="main-screen__product product">
-                        <div class="product__slider">
-                           <div class="product__slider-wrapper">
-                               <div class="product__slider-inner">
-                                   <div class="product__slide">
-                                       <img src="@img/main-section/venarus-main.jpg" alt="Венарус вся продукция">
-                                   </div>
-                                   <!-- <div class="product__slide">
-                                       <img src="@img/main-section/venarus-main.png" alt="Венарус 100мг + 900мг">
-                                   </div>
-                                   <div class="product__slide">
-                                       <img src="@img/main-section/venarus-after.png" alt="Венарус 50мг + 450мг">
-                                   </div>
-                                   <div class="product__slide">
-                                       <img src="@img/main-section/venarus-before.png" alt="Венарус 100мг + 900мг">
-                                   </div> -->
-                               </div>
-                           </div>
-                           <div class="product__slider-btns">
-                              <div class="product__slider-prev">
-                              </div>
-                              <div class="product__slider-next">
-                                  <img src="@svg/main-section/arrow-next.svg" alt="next">
-                              </div>
-                          </div>
-                       </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="marquee">
-            <div class="marquee__container">
-               <a href="#" class="marquee__text">
-                  получить скидку 10% >>> получить скидку 10% >>> получить скидку 10%
-               </a>
-           </div>
-         </section>
+         <!-- First and Main block -->
+         @@include('./html/main-screen.html')
+         <!-- Second section Marquee -->
+         @@include('./html/marquee.html')
+         <!-- Third section About -->
+         @@include('./html/about.html')
+         <!-- Forth section Description -->
+         @@include('./html/descr.html')
       </main>
-      
+      <!-- Footer -->
       @@include('./html/footer.html')
    </div>
    

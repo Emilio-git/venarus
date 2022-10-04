@@ -2,15 +2,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@300;400&display=swap');
 
+// Variables
+
 $main-font:'Roboto', sans-serif;
 $second-font: 'Merriweather', serif;
 $main-link-color: #590D56;
 
-@import '_header.scss';
-@import '_navigation.scss';
-@import '_main-section.scss';
-@import '_marquee.scss';
-@import '_footer.scss';
+// Main styles
+
+.title {
+   font-family: $second-font;
+   font-weight: 700;
+   font-size: 30px;
+   line-height: 120%;
+   color: #000000;
+}
+
+.subtitle {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 154.8%;
+   color: #777777;
+}
+
+.link {
+   font-size: 18px;
+   line-height: 21px;
+   color: $main-link-color;
+   text-decoration: underline;
+}
+
+.lock {
+   overflow: hidden;
+}
 
 html, body {
    height: 100%;
@@ -20,11 +44,9 @@ html, body {
    display: flex;
    flex-direction: column;   
    min-height: 100%;
+   scroll-behavior: smooth;
 }
-.header {   
-   &__container {
-   }
-}
+
 .container {
    max-width: 1180px;
    margin: 0 auto;
@@ -36,6 +58,24 @@ html, body {
    &__container {
    }
 }
+
+@media (min-width: 320px) {
+   .container {
+      padding: 0 15px;
+   }
+}
+
+// Imported styles
+
+@import '_header.scss';
+@import '_navigation.scss';
+@import '_main-section.scss';
+@import '_marquee.scss';
+@import '_about.scss';
+@import '_descr.scss';
+@import '_footer.scss';
+
+
 .footer {
 
    &__container {
@@ -46,8 +86,4 @@ li {
    color: #000;
 }
 
-.link {
-   font-size: 18px;
-   line-height: 21px;
-   color: $main-link-color;
-}
+

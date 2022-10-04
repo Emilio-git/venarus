@@ -23,7 +23,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 30px 0;
-      min-height: 90px;
       position: relative;
 
    }
@@ -108,4 +107,69 @@
 .hide-icons .nav__search,
 .hide-icons .nav__geo {
    transform: scale(0);
+}
+
+@media (max-width: 320px) {
+   .header {
+
+		&__container {
+		}
+
+		&__content {
+		}
+
+		&__logo {
+         & a img {
+         }
+      }
+
+		&__nav {
+		}
+   }
+   .nav {
+
+      &__inner {
+      }
+
+      &__search {
+      }
+
+      &__geo {
+      }
+
+      &__burger {
+      }
+   }
+   .burger {
+   }
+   .navigation {
+
+      &__animation {
+      }
+
+      &__container {
+      }
+
+      &__item {
+      }
+
+      &__list {
+      }
+
+      &__link {
+      }
+   }
+   .hide {
+   }
+   .animation-first {
+   }
+   .animation-second {
+   }
+   .animation-third {
+   }
+   .animation-forth {
+   }
+   .animation-fifth {
+   }
+
 }
