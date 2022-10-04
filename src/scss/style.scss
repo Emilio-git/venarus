@@ -4,9 +4,12 @@
 
 $main-font:'Roboto', sans-serif;
 $second-font: 'Merriweather', serif;
+$main-link-color: #590D56;
 
 @import '_header.scss';
 @import '_navigation.scss';
+@import '_main-section.scss';
+@import '_marquee.scss';
 @import '_footer.scss';
 
 html, body {
@@ -41,4 +44,10 @@ html, body {
 
 li {
    color: #000;
+}
+
+.link {
+   font-size: 18px;
+   line-height: 21px;
+   color: $main-link-color;
 }

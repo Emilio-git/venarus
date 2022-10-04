@@ -12,4 +12,10 @@ window.addEventListener('DOMContentLoaded', () => {
       menu.classList.toggle('hide');
       menuInner.classList.toggle('hide-icons');
    });
+
+   const links = document.querySelector('a');
+
+   links.addEventListener('click', (e) => {
+      e.preventDefault();
+   });
 })

@@ -15,7 +15,7 @@ export const path = {
       icons: `${buildFolder}/assets/icons`,
    },
    src: {
-      images: `${srcFolder}/assets/img/*.{jpg, jpeg, png, gif, webp}`,
+      images: `${srcFolder}/assets/img/**/*.{jpg, jpeg, png, gif, webp}`,
       svg: `${srcFolder}/assets/**/*.svg`,
       js: `${srcFolder}/js/app.js`,
       scss: `${srcFolder}/scss/style.scss`,
@@ -23,7 +23,7 @@ export const path = {
       icons: `${srcFolder}/assets/icons/**/*.*`,
    },
    watch: {
-      images: `${srcFolder}/assets/**/*.{jpg, jpeg, png, gif, webp}`,
+      images: `${srcFolder}/assets/img/**/*.{jpg, jpeg, png, gif, webp}`,
       js: `${srcFolder}/js/**/*.js`,
       scss: `${srcFolder}/scss/**/*.scss`,
       html: `${srcFolder}/**/*.html`,

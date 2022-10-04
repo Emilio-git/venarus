@@ -1,0 +1,33 @@
+.marquee {
+   overflow: hidden;
+
+   &__container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #47093E;
+      width: 110%;
+   }
+
+   &__text {
+      padding: 16px 0 22px;
+      font-weight: 300;
+      font-size: 48px;
+      line-height: 56px;
+      text-transform: uppercase;
+      color: $main-link-color;
+      white-space: nowrap;
+      animation: marquee 30s infinite linear;
+      &:after {
+         content: "получить скидку 10% >>> получить скидку 10% >>> получить скидку 10%";
+      }
+   }
+}
+
+@keyframes marquee{
+   0% {
+       transform: translateX(0)
+   }
+   100% {
+       transform: translateX(-50%)
+   }
+}
