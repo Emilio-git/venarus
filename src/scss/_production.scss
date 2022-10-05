@@ -1,0 +1,33 @@
+.production {
+   background: #000;
+   &__container {
+   }
+
+   &__content {
+   }
+
+   &__aside {
+   }
+
+   &__title {
+   }
+
+   &__icon {
+      width: 100px;
+      height: 100px;
+      background: url('@svg/arrow.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      & circle {
+         stroke: red;
+      }
+      & path {
+         color: red;
+         stroke: red;
+         fill: red;
+      }
+   }
+
+}

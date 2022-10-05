@@ -1,6 +1,7 @@
 .purchase {
    position: relative;
-   padding-bottom: 95px;
+   z-index: 2;
+   padding: 95px 0;
    &__container {
    }
 

@@ -43,5 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
    });
 
 
+   const icon = document.querySelector('#icon');
+   console.dir(icon);
 
 })
