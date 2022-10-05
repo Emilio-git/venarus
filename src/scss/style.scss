@@ -59,11 +59,11 @@ html, body {
    }
 }
 
-@media (min-width: 320px) {
-   .container {
-      padding: 0 15px;
-   }
+li {
+   color: #000;
 }
+
+
 
 // Imported styles
 
@@ -73,17 +73,9 @@ html, body {
 @import '_marquee.scss';
 @import '_about.scss';
 @import '_descr.scss';
+
+@import '_purchase.scss';
 @import '_footer.scss';
 
-
-.footer {
-
-   &__container {
-   }
-}
-
-li {
-   color: #000;
-}
 
 
