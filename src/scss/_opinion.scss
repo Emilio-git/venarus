@@ -21,7 +21,6 @@
    }
 
    &__video-box {
-      justify-self: end;
    }
 
    &__video {
@@ -29,6 +28,10 @@
       width: 847px;
       position: relative;
       height: 570px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
       & img {
          position: absolute;
          object-fit: cover;
@@ -38,6 +41,38 @@
          width: 100%;
 
       }
+   }
+
+   &__play-btn {
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+         fill: #47093E;
+         & circle {
+            fill: #47093E;
+
+         }
+      }
+   }
+
+   &__slider {
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__slider-wrapper {
+      width: 780px;
+      overflow: hidden;
+
+   }
+
+   &__slider-inner {
+      display: flex;
+      transition: all 1s;
    }
 
    &__dots {
@@ -70,11 +105,7 @@
       }
    }
 }
-.option {
 
-   &__video {
-   }
-}
 
 .active-dot {
    &:after {

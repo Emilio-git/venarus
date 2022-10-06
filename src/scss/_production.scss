@@ -1,33 +1,128 @@
 .production {
-   background: #000;
+   padding: 126px 0;
    &__container {
    }
 
    &__content {
+      display: grid;
+      grid-template-columns: 263px 1fr;
+      grid-template-rows: auto;
+      row-gap: 35px;
    }
 
    &__aside {
+
    }
 
    &__title {
    }
 
-   &__icon {
-      width: 100px;
-      height: 100px;
-      background: url('@svg/arrow.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: block;
-      & circle {
-         stroke: red;
-      }
-      & path {
-         color: red;
-         stroke: red;
-         fill: red;
+   &__slider {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      height: 270px;
+   }
+
+   &__slider-wrapper {
+      margin-right: 29px;
+      width: 750px;
+   }
+
+   &__slider-inner {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+   }
+
+   &__slide {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.5s;
+   }
+
+   &__video {
+      width: 458px;
+      position: relative;
+      height: 270px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      & img {
+         position: absolute;
+         object-fit: cover;
+         height: 100%;
+         top: 0;
+         left: 0;
+         width: 100%;
+
       }
    }
 
+   &__play-btn {
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+         fill: #47093E;
+         & circle {
+            fill: #47093E;
+
+         }
+      }
+   }
+
+   &__slider-btns {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__slider-prev {
+      cursor: pointer;
+
+      margin-bottom: 29px;
+   }
+
+   &__slider-next {
+      cursor: pointer;
+
+   }
+
+   &__link {
+      justify-self: end;
+      grid-column-start: 2;
+   }
+
+   &__link-btn {
+      border: 1px solid #000000;
+      border-radius: 33.5px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 67px;
+      padding: 0 78px;
+      display: inline-block;
+      text-align: center;
+      color: #000000;
+      transition: all 0.3s;
+      &:hover {
+         background: #590D56;
+         color: #FFFFFF;
+      }
+   }
+}
+
+.disabled {
+   height: 150px;
+   transform: scale(0.5);
+   transform: translateX(-240px);
+   cursor: pointer;
+   transition: all 0.5s;
+   & svg {
+      opacity: 0;
+      pointer-events: none;
+   }
 }

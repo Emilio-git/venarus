@@ -12,25 +12,15 @@
       position: absolute;
       pointer-events: none;
       & img {
-         width: 100%;
       }
    }
    &__container {
    }
 
    &__content {
-      display: flex;
-
-   }
-
-   &__column {
-      align-items: center;
-      &:first-child {
-         flex: 0 1 360px;
-      }
-      &:last-child {
-         flex: 0 1 780px;
-      }
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      row-gap: 159px;
    }
 
    &__about {
@@ -42,9 +32,10 @@
       font-size: 55px;
       line-height: 100%;
       color: #000000;
-      margin-bottom: 200px;
    }
-
+   &__icon-link{
+     margin-right: 30px; 
+   }
    &__link-box {
    }
 
@@ -60,7 +51,7 @@
 
    &__link {
       display: flex;
-      align-items: center;    
+      align-items: center;
       justify-content: start;
       & span:before {
          font-size: 48px;
@@ -69,30 +60,19 @@
       & span:last-child {
          text-decoration: underline;
       }
+      &:hover {
+         & span:last-child {
+            text-decoration: none;
+         }
+      }
    }
 
    &__product {
+      grid-row-start: span 2;
    }
 }
 
-.icon-a-btn:before {
-
-}
-
- .icon-arrow-back:before {
- }
- .icon-arrow-next:before {
- }
- .icon-download-btn:before {
- }
- .icon-play-btn:before {
-   text-decoration: none;
-
- }
-
-
 .product {
-
    &__slider {
       display: flex;
       flex-direction: column;
@@ -107,9 +87,27 @@
    }
 
    &__slide {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
    }
-
+   &__before {
+      left: -20%;
+      top: -5%;
+      z-index: -1;
+      position: absolute;
+   }
+   &__after {
+      right: 2%;
+      top: -12%;
+      z-index: -1;
+      position: absolute;
+   }
    &__slider-btns {
+      user-select: none;
+
       color: $main-link-color;
       display: flex;
       justify-content: center;   
@@ -131,7 +129,8 @@
       font-size: 68px;
       cursor: pointer;
       transition: all 0.3s;
-
+      & span {
+      }
       &:hover {
          opacity: 0.7;
       }
@@ -160,62 +159,7 @@
 }
 
 .product__img-main {
-   position: relative;
-   &:before {
-      content: '';
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: url('@img/main-section/venarus-before.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-   }
+   position: absolute;
+   bottom: -10%;
+   left: 0;
 }
-
-// .offer__slider{
-
-// }
-
-// .offer__slider-counter{
-//    display:flex;
-//    width:180px;
-//    align-items:center;
-//    font-size:24px;
-//    color:rgba(0,0,0,.5)
-// }
-
-// .offer__slider-wrapper{
-//    width:100%;
-//    margin-top:15px;
-//    box-shadow:0 4px 30px rgba(0,0,0,.25)
-// }
-
-// .offer__slider-prev{
-//    margin-right:10px;
-//    cursor:pointer
-// }
-
-// .offer__slider-next{
-//    margin-left:10px;
-//    cursor:pointer
-// }
-
-// .offer__slider #current{
-//    font-size:48px;
-//    font-weight:700;
-//    color:#000
-// }
-
-// .offer__slide{
-//    width:100%;
-//    height:390px
-// }
-
-// .offer__slide img{
-//    width:100%;
-//    height:100%;
-//    object-fit:cover
-// }

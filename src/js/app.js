@@ -2,25 +2,21 @@
 
 // import testWebP from './components/webp.js';
 import slider from './modules/slider.js';
+import additionalInfo from './modules/additionalInfo.js';
+import productionSlider from './modules/productionSlider.js';
+import autoSlider from './modules/autoSlider.js';
+import activateMenu from './modules/menu.js'
 
 window.addEventListener('DOMContentLoaded', () => {
-   const menuBtn = document.querySelector('.nav__burger'),
-         menu = document.querySelector('.navigation'),
-         menuInner = document.querySelector('.nav__inner');
+   const links = document.querySelectorAll('a');
 
-   menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active-menu');
-      menu.classList.toggle('hide');
-      menuInner.classList.toggle('hide-icons');
-      document.querySelector('body').classList.toggle('lock');
+   links.forEach(link => {
+      link.addEventListener('click', (e) => {
+         e.preventDefault();
+      })
    });
-
-   const links = document.querySelector('a');
-
-   links.addEventListener('click', (e) => {
-      e.preventDefault();
-   });
-
+   activateMenu();
+   
    slider({
       container: '.product__slider',
       nextArrow: '.product__slider-next',
@@ -30,20 +26,28 @@ window.addEventListener('DOMContentLoaded', () => {
       field: '.product__slider-inner'
    });
 
+   additionalInfo();
 
-   const infoAboutBtn = document.querySelector('.about__title-subimg'),
-         infoAbout = document.querySelector('.about__subtitle');
+   // productionSlider({
+   //    container: '.production__slider',
+   //    nextArrow: '.production__slider-next',
+   //    prevArrow: '.production__slider-prev',
+   //    wrapper: '.production__slider-wrapper',
+   //    slide: '.production__slide',
+   //    field: '.production__slider-wrapper'
+   // });
 
-   infoAboutBtn.addEventListener('mouseover', () => {
-      infoAbout.classList.add('about-info__active');
+   const next = document.querySelector('.production__slider-next');
+   const disabled = document.querySelector('.disabled');
+   const slides = document.querySelectorAll('.production__slide');
+
+
+
+   autoSlider({
+      container: '.opinion__slider',
+      dots: '.opinion__dot',
+      wrapper: '.opinion__slider-wrapper',
+      slide: '.opinion__video-box',
+      field: '.opinion__slider-inner'
    });
-
-   infoAboutBtn.addEventListener('mouseout', () => {
-      infoAbout.classList.remove('about-info__active');
-   });
-
-
-   const icon = document.querySelector('#icon');
-   console.dir(icon);
-
 })

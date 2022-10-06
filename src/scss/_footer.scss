@@ -16,42 +16,30 @@
    }
 
    &__content {
-      display: flex;
-      justify-content: space-between;
-      
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 35px;
+      align-items: center; 
    }
 
-   &__column {
-      display: flex;
+   &__item {
    }
-
-   &__item-footer {
-      display: flex;
-      flex-direction: column;
-   }
-}
-.item-footer {
 
    &__link {
-      flex: 0 1 24px;
-      display: flex;
-      align-items: center;      
-      margin-bottom: 35px;
-      font-weight: 300;
-      font-size: 12px;
-      line-height: 100%;
       color: #7A7A7A;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 100%;
       &:hover {
          text-decoration: underline;
          color: $main-link-color;
       }
    }
 
-   &__footer {
-      flex: 1 1 auto;
+   &__link-box {
    }
 
-   &__footer-addres {
+   &__address {
       padding-left: 6px;
       font-weight: 400;
       font-size: 14px;
@@ -59,29 +47,38 @@
       color: #828282;
    }
 
-   &__footer-descr {
+   &__descr {
+   
+   }
+
+
+   &__descr-link {
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
       color: #828282;
+      &:hover {
+         color: $main-link-color;
+         text-decoration: underline;
+      }
+      display: flex;
+      justify-content: start;
+      & img {
+         margin-right: 14px;
+      }   
+   }
+}
+
+.item-footer {
+
+   &__footer-descr {
+
       &_link {
-         &:hover {
-            color: $main-link-color;
-            text-decoration: underline;
-         }
-         display: flex;
-         justify-content: space-between;
-         & img {
-            margin-right: 14px;
-         }         
+      
       }
    }
 }
 .link-box {
-   &:hover {
-      text-decoration: none;
-
-   }
    &__link {
       font-size: 30px;
       margin-right: 40.5px;
@@ -90,7 +87,6 @@
       }
       &:before {
          transition: all 0.3s;
-
       }
       &:hover:before {
          color: $main-link-color;
@@ -98,24 +94,10 @@
    }
 }
 
-.icon-vk {
-   &:hover {
-      
-   }
-}
-.icon-fb {
-   &:hover {
-      
-   }
-}
-.icon-twitter {
-   &:hover {
-      
-   }
-}
-.icon-ok {
-   &:hover {
-      
-   }
+.footer__item_address {
+   grid-column-start: 2;
 }
 
+.footer__item_logo {
+   grid-column-start: 3;
+}

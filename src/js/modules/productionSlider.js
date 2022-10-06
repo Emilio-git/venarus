@@ -1,4 +1,4 @@
-function slider ({container, slide, nextArrow, prevArrow, wrapper, field}) {  
+function productionSlider ({container, slide, nextArrow, prevArrow, wrapper, field}) {  
    // Слайдер-карусель
    const prev = document.querySelector(prevArrow),
          next = document.querySelector(nextArrow), 
@@ -12,16 +12,11 @@ function slider ({container, slide, nextArrow, prevArrow, wrapper, field}) {
        offset = 0; // перемещение
 
    slidesField.style.width = 100 * slides.length + '%'; // длина field 400%
-   slidesField.style.display = 'flex';
    slidesField.style.transition = '0.5s all';
-
-   slidesWrapper.style.overflow = 'hidden'; // прячет другие слайды
 
    slides.forEach(slide => {
       slide.style.width = width;
    });
-
-   slider.style.position = 'relative';
 
    // Сокращение кода
    function changeOffset (widthSize) {
@@ -37,6 +32,12 @@ function slider ({container, slide, nextArrow, prevArrow, wrapper, field}) {
       }
 
       slidesField.style.transform = `translateX(-${offset}px)`;
+
+      if (slideIndex == slides.length) {
+         slideIndex = 1;
+      } else {
+         slideIndex++;
+      }
    });
 
    prev.addEventListener('click', () => {
@@ -47,7 +48,15 @@ function slider ({container, slide, nextArrow, prevArrow, wrapper, field}) {
       }
 
       slidesField.style.transform = `translateX(-${offset}px)`;
+
+      if (slideIndex == 1) {
+         slideIndex = slides.length;
+      } else {
+         slideIndex--;
+      }
+
+      slideIndexChange();
    });
 }
 
-export default slider;
+export default productionSlider;

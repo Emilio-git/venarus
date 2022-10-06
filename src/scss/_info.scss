@@ -5,7 +5,6 @@
    z-index: 2;
    &__bg {
       pointer-events: none;
-
       position: absolute;
       width: 100%;
       overflow: visible;
@@ -13,7 +12,7 @@
       left: 0;
       z-index: -1;
       & img {
-         width: 100%;
+         
       }
    }
    &__container {
