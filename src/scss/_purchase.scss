@@ -2,22 +2,13 @@
    position: relative;
    z-index: 2;
    padding: 95px 0;
-   &__container {
-   }
-
    &__content {
-      display: flex;
-      
+      display: grid;      
+      grid-template-columns: minmax(auto, 263px) 1fr;
+      grid-template-rows: auto;
    }
-
-   &__column {
-      &:first-child {
-         margin-right: 29px;
-         flex: 0 1 277px;
-      }
-   }
-
    &__descr {
+
    }
 
    &__title {
@@ -28,35 +19,33 @@
    }
 
    &__product {
-      width: 850px;
       height: 400px;
-      margin-bottom: 20px 0 25px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
    }
 
    &__img {
-      position: relative;
-      &:before {
-         content: '';
-         top: -100px;
-         left: -100px;
+      width: 100%;
+      &_after {
          position: absolute;
-         content: '';
-         background: url(@img/main-section/venarus-main.jpg);
-         width: 100%;
-         height: 100%;
-         background-position: center;
-         background-repeat: no-repeat;
-         background-size: cover;
+         right: 20px;
+         top: -80px;
+         max-width: 374px;
+         z-index: -1;
       }
    }
 
    &__links {
+      grid-column-start: 2;
       display: flex;
       justify-content: space-between;
-      
    }
 
    &__link {
+      margin-right: 20px;
       font-weight: 400;
       font-size: 18px;
       line-height: 67px;
@@ -64,11 +53,15 @@
       color: #47093E;
       border: 1px solid #47093E;
       border-radius: 33.5px;
+      min-width: 263px;
       padding: 0 88px;
       transition: all 0.3s;
       &:hover {
          background: #590D56;
          color: #FFFFFF;
+      }
+      &:last-child {
+         margin-right: 0;
       }
    }
    &__gradient {
@@ -78,5 +71,124 @@
       height: 61px;
       left: 0px;
       background: linear-gradient(360deg, rgba(71, 9, 62, 0.5) -70%, rgba(255, 255, 255, 0) 100%);
+   }
+}
+
+@media (max-width: 1024px) {
+   .purchase {
+      position: relative;
+      z-index: 2;
+      padding: 25px 0 80px;
+      &__content {
+         grid-template-columns: 1fr;
+         grid-template-rows: auto;
+      }
+      &__descr {
+         margin-bottom: 60px;
+      }
+   
+      &__title {
+         margin-bottom: 20px;
+      }
+   
+      &__product {
+         height: 400px;
+      }
+      &__links {
+         grid-column-start: auto;         
+      }
+      &__link {
+         margin-right: 10px;
+         font-weight: 400;
+         line-height: 57px;
+         min-width: 200px;
+         padding: 0 60px;
+         &:last-child {
+            margin-right: 0;
+         }
+      }
+   }
+}
+@media (max-width: 768px) {
+   .purchase {
+      &__descr {
+         margin-bottom: 60px;
+      }
+   
+      &__title {
+         margin-bottom: 10px;
+      }
+   
+      &__product {
+         height: 300px;
+      }
+      &__img {
+         width: 80%;
+         &_after {
+            position: absolute;
+            right: 100px;
+            max-width: 254px;
+         }
+      }
+      &__links {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         justify-items: center;
+         row-gap: 20px;
+      }
+      &__link {
+         &:last-child {
+            margin-right: 0;
+            grid-column-start: span 2;
+
+         }
+      }
+   }
+}
+@media (max-width: 550px) {
+   .purchase {
+      &__descr {
+         margin-bottom: 0px;
+      }
+   
+      &__title {
+         margin-bottom: 10px;
+      }
+   
+      &__product {
+         height: 300px;
+         margin-bottom: 0;
+         overflow: hidden;
+      }
+      &__img {
+         overflow: hidden;
+         width: 100%;
+         transform: scale(1.2);
+         &_after {
+            display: none;
+         }
+      }
+      &__links {
+         grid-template-columns: 1fr;
+         justify-items: center;
+         row-gap: 15px;
+         width: 100%;
+      }
+      &__link {
+         min-width: 100%;
+         margin-right: 0;
+         &:last-child {
+            grid-column-start: auto;
+         }
+      }
+   }
+}
+
+@media (max-width: 425px) {
+   .purchase {
+      &__img {
+         transform: scale(1.5);
+      }
+
    }
 }

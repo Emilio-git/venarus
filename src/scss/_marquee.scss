@@ -31,3 +31,25 @@
        transform: translateX(-50%)
    }
 }
+
+@media (max-width: 1024px) {
+   .marquee {
+      margin-bottom: 50px;
+      &__text {
+         padding: 15px 0 20px;
+         font-size: 30px;
+         line-height: 30px;
+      }
+   }
+}
+
+@media (max-width: 550px) {
+   .marquee {
+      margin-bottom: 30px;
+      &__text {
+         padding: 10px 0 10px;
+         font-size: 20px;
+         line-height: 20px;
+      }
+   }
+}

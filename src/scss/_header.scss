@@ -22,14 +22,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 0;
+      padding: 16px 0;
       position: relative;
-
    }
 
    &__logo {
       position: relative;
       z-index: 3;
+      margin-right: 15px;
    }
 
    &__nav {
@@ -40,6 +40,7 @@
    &__inner {
       display: flex;
       justify-content: space-between;
+
    }
 
    &__search {
@@ -61,7 +62,6 @@
       position: relative;
       z-index: 3;
 
-
    }
 
 }
@@ -79,6 +79,7 @@
       background-image: url('@svg/header/burger-item.svg');
       background-position: center;
       background-repeat: no-repeat;
+      background-size: contain;
       display: block;
       transition: all 0.3s;
       &:first-child {
@@ -109,67 +110,62 @@
    transform: scale(0);
 }
 
-@media (max-width: 320px) {
+@media (max-width: 550px) {
    .header {
-
-		&__container {
-		}
-
-		&__content {
-		}
-
-		&__logo {
-         & a img {
-         }
+      &__content {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 16px 0;
+         position: relative;
       }
-
-		&__nav {
-		}
+   
+      &__logo {
+         position: relative;
+         z-index: 3;
+         margin-right: 15px;
+         & a {
+            & img {
+               max-width: 135px;
+            }
+         }         
+      }
+      &__nav {
+         flex: 0 1 100px;
+      }
    }
    .nav {
-
       &__inner {
+         align-items: center;
       }
-
+   
       &__search {
+         & a {
+            & img {
+               max-width: 24px;
+            }
+         }
       }
-
+   
       &__geo {
-      }
-
-      &__burger {
+         & a {
+            & img {
+               max-width: 20px;
+            }
+         }
       }
    }
    .burger {
-   }
-   .navigation {
-
-      &__animation {
-      }
-
-      &__container {
-      }
-
-      &__item {
-      }
-
-      &__list {
-      }
-
-      &__link {
+      max-width: 33px;
+      top: -20px;
+      & span {
+         top: 15px;
+         &:first-child {
+            top: 8px;
+         }
+         &:last-child{
+            top: 21px;
+         }
       }
    }
-   .hide {
-   }
-   .animation-first {
-   }
-   .animation-second {
-   }
-   .animation-third {
-   }
-   .animation-forth {
-   }
-   .animation-fifth {
-   }
-
 }

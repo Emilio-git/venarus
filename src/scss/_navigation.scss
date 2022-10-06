@@ -78,3 +78,34 @@
    top: -300%;
 }
 
+@media (max-width: 1024px) {
+   .navigation {
+      &__list {
+         padding-top: 120px;
+         position: relative;
+         z-index: 2;
+         padding-bottom: 150px;
+      }
+      &__item {
+         margin-bottom: 50px;
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
+
+   }
+}
+
+@media (max-width: 550px) {
+   .navigation {
+      &__list {
+         padding-top: 100px;
+      }
+      &__item {
+         text-align: center;
+      }
+      &__link {
+         font-size: 18px;
+      }
+   }
+}
