@@ -9,6 +9,7 @@ function additionalInfo() {
    infoAboutBtn.addEventListener('mouseout', () => {
    infoAbout.classList.remove('about-info__active');
    });
+
 }
 
 export default additionalInfo;
