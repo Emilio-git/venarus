@@ -17,14 +17,14 @@ window.addEventListener('DOMContentLoaded', () => {
    });
    activateMenu();
    
-   // slider({
-   //    container: '.product__slider',
-   //    nextArrow: '.product__slider-next',
-   //    prevArrow: '.product__slider-prev',
-   //    wrapper: '.product__slider-wrapper',
-   //    slide: '.product__slide',
-   //    field: '.product__slider-inner'
-   // });
+   slider({
+      container: '.product__slider',
+      nextArrow: '.product__slider-next',
+      prevArrow: '.product__slider-prev',
+      wrapper: '.product__slider-wrapper',
+      slide: '.product__slide',
+      field: '.product__slider-inner'
+   });
 
    additionalInfo();
 
@@ -43,11 +43,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-   // autoSlider({
-   //    container: '.opinion__slider',
-   //    dots: '.opinion__dot',
-   //    wrapper: '.opinion__slider-wrapper',
-   //    slide: '.opinion__video-box',
-   //    field: '.opinion__slider-inner'
-   // });
+   autoSlider({
+      container: '.opinion__slider',
+      dots: '.opinion__dot',
+      wrapper: '.opinion__slider-wrapper',
+      slide: '.opinion__video-box',
+      field: '.opinion__slider-inner'
+   });
 })

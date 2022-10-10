@@ -5,12 +5,11 @@
 
    &__content {
       display: grid;
-      grid-template-columns: 277px 1fr;
+      grid-template-columns: 200px 1fr;
       grid-template-rows: auto;
    }
 
    &__aside {
-      margin-right: 15px;
    }
 
    &__title {
@@ -21,13 +20,14 @@
    }
 
    &__video-box {
+      height: 570px;
    }
 
    &__video {
       margin-bottom: 30px;
-      width: 847px;
+      width: 100%;
       position: relative;
-      height: 570px;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -65,9 +65,9 @@
    }
 
    &__slider-wrapper {
-      width: 780px;
+      width: 847px;
       overflow: hidden;
-
+      margin-bottom: 30px;
    }
 
    &__slider-inner {
@@ -110,5 +110,124 @@
 .active-dot {
    &:after {
       transform: scale(1);
+   }
+}
+
+@media (max-width: 1024px) {
+   .opinion {
+      padding: 94px 0 74px;
+   
+      &__content {
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-template-rows: auto;
+      }
+   
+      &__aside {
+         margin-right: 0px;
+         margin-bottom: 20px;
+      }
+   
+      &__title {
+         margin-bottom: 10px;
+      }
+   
+      &__subtitle {
+      }
+   
+      &__video-box {
+         width: 100%;
+
+      }
+   
+      &__video {
+         margin-bottom: 30px;
+         & img {
+         }
+      }
+   
+      &__play-btn {
+         &:hover {
+            & circle {
+            }
+         }
+      }
+   
+      &__slider {
+         justify-self: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+   
+      &__slider-wrapper {
+         overflow: hidden;
+         width: 700px;
+      }
+
+      &__slider-inner {
+
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .opinion {
+      &__slider-wrapper {
+         width: 500px;
+      }
+      &__video-box {
+         height: 300px;
+      }
+   }
+}
+
+@media (max-width: 550px) {
+   .opinion {
+      padding: 94px 0 74px;
+   
+      &__content {
+      }
+   
+      &__aside {
+      }
+   
+      &__title {
+      }
+   
+      &__subtitle {
+      }
+   
+      &__video-box {
+         height: 200px;
+      }
+   
+      &__video {
+         
+         & img {
+         }
+      }
+   
+      &__play-btn {
+         &:hover {
+            & circle {
+            }
+         }
+      }
+   
+      &__slider {
+         justify-self: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+   
+      &__slider-wrapper {
+         width: 300px;
+      }
+
+      &__slider-inner {
+
+      }
    }
 }

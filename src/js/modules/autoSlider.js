@@ -1,6 +1,5 @@
-function autoSlider({container, slide, dots, wrapper, field}) {
+function autoSlider({slide, dots, wrapper, field}) {
    const slidesInfo = document.querySelectorAll(slide),
-         sliderInfo = document.querySelector(container),
          dotsInfo = document.querySelectorAll(dots),
          slidesWrapperInfo = document.querySelector(wrapper),
          slidesFieldInfo = document.querySelector(field),
@@ -13,10 +12,9 @@ function autoSlider({container, slide, dots, wrapper, field}) {
    slidesInfo.forEach(slide => {
       slide.style.width = width;
    });
-   sliderInfo.style.position = 'relative';
 
    function changeOffset (widthSize) {
-      return +widthSize.replace(/\D/g, '');
+      return +widthSize.slice(0, -2);
    }
    function changeDot(slideIndex) {
       dotsInfo.forEach(dot => {
@@ -43,7 +41,6 @@ function autoSlider({container, slide, dots, wrapper, field}) {
       }
       changeDot(slideIndexInfo);
    }
-
 
    dotsInfo.forEach(dot => {
       dot.addEventListener('click', (e) => {
