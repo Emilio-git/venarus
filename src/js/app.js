@@ -28,20 +28,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
    additionalInfo();
 
-   // productionSlider({
-   //    container: '.production__slider',
-   //    nextArrow: '.production__slider-next',
-   //    prevArrow: '.production__slider-prev',
-   //    wrapper: '.production__slider-wrapper',
-   //    slide: '.production__slide',
-   //    field: '.production__slider-wrapper'
-   // });
-
-   // const next = document.querySelector('.production__slider-next');
-   // const disabled = document.querySelector('.disabled');
-   // const slides = document.querySelectorAll('.production__slide');
-
-
+   productionSlider({
+      nextArrow: '.production__slider-next',
+      prevArrow: '.production__slider-prev',
+      firstSlide: '.video_first',
+      secondSlide: '.video_second',
+      field: '.production__slider',
+      activeVideo: '.active_video'
+   });
 
    autoSlider({
       container: '.opinion__slider',

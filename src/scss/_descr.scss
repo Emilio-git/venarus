@@ -1,5 +1,8 @@
 .descr {
-
+   position: relative;
+   z-index: 1;
+   overflow: visible;
+   background: transparent;
    &__container {
    }
 
@@ -38,6 +41,7 @@
 }
 
 .row-item {
+   overflow: visible;
    position: relative;
    border-top: 1px solid #47093E;
    padding: 21px 0 35px;

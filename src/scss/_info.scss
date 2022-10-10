@@ -2,23 +2,29 @@
    margin-top: -74px;
    position: relative;
    padding: 243px 0 54px;
-   z-index: 2;
+   overflow: visible;
+   max-width: 1440px;
+   margin: 0 auto;
    &__bg {
       pointer-events: none;
       position: absolute;
       width: 100%;
+      height: 100%;
       overflow: visible;
       top: 0;
       left: 0;
-      z-index: -1;
-      & img {
-         
-      }
+      z-index: 1;
+      background: url(@svg/bg/info-bg.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
    }
    &__container {
    }
 
    &__content {
+      position: relative;
+      z-index: 2;
       display: grid;
       grid-template-rows: auto auto;
       grid-template-columns: minmax(200px ,263px) 1fr;

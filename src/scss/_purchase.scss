@@ -1,7 +1,8 @@
 .purchase {
    position: relative;
-   z-index: 2;
    padding: 95px 0;
+   overflow: visible;
+   background: transparent;
    &__content {
       display: grid;      
       grid-template-columns: minmax(auto, 263px) 1fr;

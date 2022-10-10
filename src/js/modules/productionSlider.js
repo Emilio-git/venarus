@@ -1,62 +1,75 @@
-function productionSlider ({container, slide, nextArrow, prevArrow, wrapper, field}) {  
-   // Слайдер-карусель
-   const prev = document.querySelector(prevArrow),
-         next = document.querySelector(nextArrow), 
-         slides = document.querySelectorAll(slide),
-         slider = document.querySelector(container),
-         slidesWrapper = document.querySelector(wrapper), // wrapper
-         slidesField = document.querySelector(field), // inner
-         width = window.getComputedStyle(slidesWrapper).width; // wrapper width
-   
-   let slideIndex = 1, //первый слайд
-       offset = 0; // перемещение
+function productionSlider ({nextArrow, prevArrow, firstSlide, secondSlide, field, activeVideo}) {  
+   const firstBox = document.querySelector(firstSlide),
+         secondBox = document.querySelector(secondSlide),
+         prev = document.querySelector(prevArrow),
+         next = document.querySelector(nextArrow),
+         slider = document.querySelector(field),
+         activeBox = document.querySelector(activeVideo);
 
-   slidesField.style.width = 100 * slides.length + '%'; // длина field 400%
-   slidesField.style.transition = '0.5s all';
+   let i = 0;
+   prev.addEventListener('click', () => {
+      if(i === 1) {
+         firstBox.classList.remove('animate__first', 'active_video');
+         secondBox.classList.remove('animate__second');
+         
+         firstBox.classList.add('animate__second');
+         secondBox.classList.add('animate__first', 'active_video');
+         
+         i--;
 
-   slides.forEach(slide => {
-      slide.style.width = width;
-   });
+         next.classList.toggle('dissabled_btn');
+         prev.classList.toggle('dissabled_btn');
 
-   // Сокращение кода
-   function changeOffset (widthSize) {
-      return +widthSize.replace(/\D/g, '');
-   }
-   // ===========================================================
+
+      }
+   })
 
    next.addEventListener('click', () => {
-      if (offset == changeOffset(width) * (slides.length - 1)) {
-         offset = 0;
-      } else {
-         offset += changeOffset(width);
+      if (i === 0) {
+         firstBox.classList.remove('animate__second');
+         secondBox.classList.remove('animate__first', 'active_video');
+         
+         firstBox.classList.add('animate__first', 'active_video');
+         secondBox.classList.add('animate__second');
+         
+         i++;
+
+         next.classList.toggle('dissabled_btn');
+         prev.classList.toggle('dissabled_btn');
       }
+   })
 
-      slidesField.style.transform = `translateX(-${offset}px)`;
 
-      if (slideIndex == slides.length) {
-         slideIndex = 1;
-      } else {
-         slideIndex++;
+   const modal = document.querySelector('.modal');
+
+   activeBox.addEventListener('click', () => {
+      openModal();
+   });
+
+
+   function openModal() {
+      modal.classList.toggle('show_modal');
+      document.body.style.overflow = 'hidden';
+   }
+   
+   function closeModal() {
+      modal.classList.toggle('show_modal');
+      document.body.style.overflow = '';
+   }
+   
+
+   modal.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target === modal || e.target.getAttribute('data-close') == '') {
+         closeModal();
       }
    });
 
-   prev.addEventListener('click', () => {
-      if (offset == 0) {
-         offset = changeOffset(width) * (slides.length - 1);
-      } else {
-         offset -= changeOffset(width);
+   document.addEventListener('keydown', (e) => {
+      if (e.code === 'Escape' && modal.classList.contains('show_modal')) {
+         closeModal();
       }
-
-      slidesField.style.transform = `translateX(-${offset}px)`;
-
-      if (slideIndex == 1) {
-         slideIndex = slides.length;
-      } else {
-         slideIndex--;
-      }
-
-      slideIndexChange();
    });
+   
 }
-
 export default productionSlider;
